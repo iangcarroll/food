@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "restaurant-health-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [{ "pattern": "food.ian.sh", "custom_domain": true }],
+  "workers_dev": true,
+  "observability": { "enabled": true },
+  // Daily check; LA + Las Vegas are re-imported when the source file has changed.
+  "triggers": { "crons": ["17 9 * * *"] },
+  "limits": { "cpu_ms": 300000 },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "restaurant-health",
+      "database_id": "ae86ef45-d95b-48ab-808c-690a2f24702f",
+      "migrations_dir": "migrations"
+    }
+  ]
+}
