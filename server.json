@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.iangcarroll/restaurant-health",
+  "title": "Restaurant Health Inspections",
+  "description": "Restaurant health inspection grades and violations for 20 US, UK, Canadian and French locations.",
+  "repository": {
+    "url": "https://github.com/iangcarroll/food",
+    "source": "github"
+  },
+  "websiteUrl": "https://food.ian.sh",
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://food.ian.sh/mcp"
+    }
+  ]
+}
